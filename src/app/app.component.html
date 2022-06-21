@@ -1,7 +1,6 @@
 AppComponent
 {{name}}
 <app-hello></app-hello>
-<app-hi></app-hi>
 <!-- String interpolations -->
 <p>{{user.name}}</p>
 <p>{{user.name}}</p>
@@ -15,3 +14,15 @@ AppComponent
 <!--Two way databinding-->
 <!--short hand: [ngModel]="name" (ngModelChange) = "name = $event"-->
 <input [(ngModel)]="name" type="text">
+
+<h2>Day 4</h2>
+
+<app-hi *ngIf="user.age >= 19;else under19" [name]="user.name"></app-hi>
+<h2>Current age{{user.age}}</h2>
+<ng-template #under19>
+  <div>
+    <h2>Too young make see the content</h2>
+  </div>
+</ng-template>
+<button (click)="user.age = user.age +1"> Increase the Age</button>
+<button (click)="user.age = user.age -1"> Descrease the Age</button>

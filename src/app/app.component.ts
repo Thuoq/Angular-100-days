@@ -11,7 +11,8 @@ export class AppComponent {
   // Data binding
   inputType = 'text';
   user = {
-    name: 'thuong'
+    name: 'thuong',
+    age: 0
   };
 
   //  Event binding
@@ -19,4 +20,5 @@ export class AppComponent {
   handler(): void {
     console.log('Click');
   }
+
 }
