@@ -1,28 +1,5 @@
-<h1>Start day 6</h1>
-
-
-<div [class.red-border]="isDanger" [class.yellow-background]="isWarning" class="box"></div>
-<!-- Class binding -->
-<!-- class.name_class_stylecss = "expression"-->
-<button (click)="toggleDanger()">Toggle Danger</button>
-
-<button (click)="isWarning = !isWarning">Toggle Warning</button>
-
-<!-- Array -->
-<div [class]="['red-border']" class="box"></div>
-
-
-<!-- Object -->
-<div [class]="{'red-border':isDanger}" class="box"></div>
-
-<!-- Variables -->
-<div [class]="classes"></div>
-
-<!-- Style binding -->
-
-<p [style.color]="'red'">
-  hello
-</p>
-<p [style.--text-color]="isDanger ? 'red' : 'blue'">
-  Hello 2
-</p>
+<h1>Start day 7</h1>
+<button (click)="currentProgress = currentProgress +2"> Increase Progress</button>
+<app-progress-bar [backgroundColor]="'#ccc'" [progressColor]="'tomato'" [progress]="currentProgress"></app-progress-bar>
+<br>
+<!--<app-progress-bar></app-progress-bar>-->
