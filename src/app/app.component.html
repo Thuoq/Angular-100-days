@@ -1,2 +1,14 @@
 <h2>Hello world</h2>
-<app-toggle [(checked)]="isChecked"></app-toggle>
+<!-- #toggleComponent is instances-->
+<button (click)="showLast = !showLast">Show Last</button>
+<br>
+<input #nameInput name="name" type="text">
+<input #nameInput name="name" type="text">
+
+<ng-container *ngIf="showLast">
+  <input #nameInput name="name" type="text">
+
+</ng-container>
+
+<app-toggle #toggleComponent [(checked)]="isChecked"></app-toggle>
+<button #toggleButton (click)="toggleComponent.toggle()">Click</button>

@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
     <div
       class="toggle-wrapper"
       [class.checked]="checked"
-      (click)="checkedChange.emit(!this.checked)"
+      (click)="toggle()"
     >
       <div class="toggle"></div>
     </div>`,
@@ -67,7 +67,12 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
     `,
   ],
 })
-export class ToogleComponent {
+export class ToggleComponent {
   @Input() checked: boolean;
   @Output() checkedChange = new EventEmitter<boolean>();
+
+  toggle() {
+    this.checkedChange.emit(!this.checked);
+  }
+
 }
